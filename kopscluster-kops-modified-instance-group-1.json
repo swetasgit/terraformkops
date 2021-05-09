@@ -1,0 +1,27 @@
+{
+  "kind": "InstanceGroup",
+  "apiVersion": "kops.k8s.io/v1alpha2",
+  "metadata": {
+    "name": "master-us-east-1b",
+    "creationTimestamp": null,
+    "labels": {
+      "kops.k8s.io/cluster": "kopscluster.k8s.local"
+    }
+  },
+  "spec": {
+    "role": "Master",
+    "image": "amazon.com/amzn2-ami-hvm-2.0.20210427.0-x86_64-gp2",
+    "minSize": 1,
+    "maxSize": 1,
+    "machineType": "t2.micro",
+    "subnets": [
+      "us-east-1b"
+    ],
+    "nodeLabels": {
+      "kops.k8s.io/instancegroup": "master-us-east-1b"
+    },
+    "iam": {
+      "profile": "arn:aws:iam::672058243948:instance-profile/k8s_masters_kopscluster.k8s.local"
+    }
+  }
+}
